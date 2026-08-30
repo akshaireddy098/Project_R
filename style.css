@@ -1,0 +1,447 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #fff5f8;
+    color: #333;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(255, 192, 203, 0.65),
+            rgba(255, 228, 235, 0.9)
+        );
+
+    padding: 30px;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.small-text {
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: "Dancing Script", cursive;
+    font-size: clamp(60px, 10vw, 120px);
+    color: #e75480;
+}
+
+.hero h2 {
+    font-family: "Dancing Script", cursive;
+    font-size: 55px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.intro {
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
+button {
+    border: none;
+    padding: 15px 30px;
+
+    border-radius: 50px;
+
+    background: #e75480;
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+    background: #d63d6b;
+}
+
+
+/* =========================
+   COMMON
+========================= */
+
+.container {
+    width: min(1100px, 90%);
+    margin: auto;
+    text-align: center;
+}
+
+section {
+    padding: 100px 20px;
+}
+
+.section-title {
+    color: #e75480;
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+section h2 {
+    font-family: "Dancing Script", cursive;
+    font-size: 55px;
+    margin-bottom: 40px;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message-section {
+    background: white;
+}
+
+.message-box {
+    max-width: 800px;
+    margin: auto;
+
+    background: #fff5f8;
+
+    padding: 45px;
+
+    border-radius: 25px;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+.message-box p {
+    font-size: 17px;
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+.signature {
+    font-family: "Dancing Script", cursive;
+    font-size: 30px !important;
+    color: #e75480;
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery-section {
+    background: #fff5f8;
+}
+
+.gallery {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 25px;
+}
+
+.photo-card {
+    height: 300px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.12);
+
+    transition: 0.4s;
+}
+
+.photo-card:hover {
+    transform: translateY(-10px) rotate(1deg);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.5s;
+}
+
+.photo-card:hover img {
+    transform: scale(1.1);
+}
+
+
+/* =========================
+   MUSIC
+========================= */
+
+.music-section {
+    background: white;
+}
+
+.music-card {
+    max-width: 600px;
+
+    margin: auto;
+
+    padding: 45px;
+
+    border-radius: 30px;
+
+    background: #fff5f8;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.08);
+}
+
+.music-icon {
+    font-size: 60px;
+    margin-bottom: 15px;
+}
+
+.music-card h3 {
+    font-family: "Dancing Script", cursive;
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.music-card p {
+    margin-bottom: 25px;
+}
+
+audio {
+    width: 100%;
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+.final-section {
+    min-height: 70vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffd6e2,
+            #fff
+        );
+}
+
+.cake {
+    font-size: 100px;
+    margin-bottom: 20px;
+}
+
+.final-section h1 {
+    font-family: "Dancing Script", cursive;
+    font-size: 70px;
+    color: #e75480;
+}
+
+.final-section p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+
+/* =========================
+   POPUP
+========================= */
+
+.popup {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,0.65);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 1000;
+}
+
+.popup.active {
+    display: flex;
+}
+
+.popup-content {
+    position: relative;
+
+    max-width: 550px;
+
+    background: white;
+
+    padding: 50px 35px;
+
+    border-radius: 30px;
+
+    text-align: center;
+
+    animation: popup 0.5s ease;
+}
+
+.popup-heart {
+    font-size: 70px;
+}
+
+.popup-content h2 {
+    margin-bottom: 20px;
+}
+
+.popup-content p {
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.popup-content h3 {
+    color: #e75480;
+    font-family: "Dancing Script", cursive;
+    font-size: 35px;
+}
+
+.close-btn {
+    position: absolute;
+
+    right: 15px;
+    top: 15px;
+
+    width: 40px;
+    height: 40px;
+
+    padding: 0;
+
+    font-size: 25px;
+
+    background: #eee;
+    color: #333;
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes popup {
+
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.heart {
+    position: fixed;
+
+    bottom: -20px;
+
+    font-size: 20px;
+
+    pointer-events: none;
+
+    animation:
+        floatHeart 6s linear forwards;
+
+    z-index: 999;
+}
+
+@keyframes floatHeart {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    section {
+        padding: 70px 15px;
+    }
+
+    .hero h2 {
+        font-size: 42px;
+    }
+
+    section h2 {
+        font-size: 43px;
+    }
+
+    .message-box {
+        padding: 25px;
+    }
+
+    .final-section h1 {
+        font-size: 50px;
+    }
+
+    .photo-card {
+        height: 260px;
+    }
+
+}
